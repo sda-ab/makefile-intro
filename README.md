@@ -42,7 +42,7 @@ Pe lângă toate aceste avantaje ale Makefile-urilor, ele trebuie incluse în ar
 
 ### Folosire:
 
-<img src="./resources/images/ex-1-makefile.jpg">
+<img src="https://raw.githubusercontent.com/sda-ab/makefile-intro/main/resources/images/ex-1-makefile.jpg">
 
  Exemplul prezentat mai sus conține două reguli: all și clean. La rularea comenzii make se execută prima regulă din Makefile (în cazul de față all, nu contează în mod special denumirea). Comanda executată este gcc hello.c -o hello. Se poate preciza explicit ce regulă să se execute prin transmiterea ca argument comenzii make. (comanda make clean pentru a șterge executabilul hello și comanda make all pentru a obține din nou acel executabil).
 
@@ -64,7 +64,7 @@ hello hello.c Makefile
 ```
 
 ### Sintaxa unei reguli dintr-un fișier Makefile:
-<img src="./resources/images/ex-2-makefile.jpg">
+<img src="https://raw.githubusercontent.com/sda-ab/makefile-intro/main/resources/images/ex-2-makefile.jpg">
 
 - target - este, de obicei, fișierul care se va obține prin rularea comenzii command. După cum s-a observat și din exemplul anterior, poate să fie o țintă virtuală care nu are asociat un fișier.
 - prerequisites - reprezintă dependențele necesare pentru a urmări regula; de obicei sunt fișiere necesare(alte target-uri) pentru obținerea țintei.
@@ -73,7 +73,7 @@ hello hello.c Makefile
 
 ### Un alt exemplu de fișier Makefile:
 
-<img src="./resources/images/ex-3-makefile.jpg">
+<img src="https://raw.githubusercontent.com/sda-ab/makefile-intro/main/resources/images/ex-3-makefile.jpg">
 
 Observăm prezența regulii __all__ care va fi executată implicit.
 - __all__: are ca dependență hello și nu execută nicio comandă
@@ -85,7 +85,7 @@ ___Notă___: La regula cu target-ul hello.o se observă folosirea opțiunii -c a
 ### Folosirea variabilelor
 
 Un fișier __Makefile__ permite folosirea de variabile. Astfel, un exemplu uzual de fișier __Makefile__ este:
-<img src="./resources/images/ex-4-makefile.jpg">
+<img src="https://raw.githubusercontent.com/sda-ab/makefile-intro/main/resources/images/ex-4-makefile.jpg">
 
 În exemplul de mai sus au fost definite variabilele CC și CFLAGS. Variabia CC reprezintă compilatorul folosit, iar variabila CFLAGS reprezintă opțiunile de compilare utilizate; în cazul de față sunt afișarea tuturor warning-urilor (-Wall) cu suport de depanare (-g).
 Variabilele predefinte sunt:
