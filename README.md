@@ -70,3 +70,25 @@ hello hello.c Makefile
 - prerequisites - reprezintă dependențele necesare pentru a urmări regula; de obicei sunt fișiere necesare(alte target-uri) pentru obținerea țintei.
 - ```<tab>``` reprezintă caracterul tab și trebuie neaparat folosit înaintea precizării comenzii.
 - command - o listă de comenzi (niciuna, una, oricâte) rulate în momentul în care se trece la obținerea țintei.
+
+### Un alt exemplu de fișier Makefile:
+
+<img src="./resources/images/ex-3-makefile.jpg">
+
+Observăm prezența regulii __all__ care va fi executată implicit.
+- __all__: are ca dependență hello și nu execută nicio comandă
+- __hello__: are ca dependență hello.o și realizează link-editarea fișierului hello.o
+- __hello.o__ are ca dependență hello.c și realizează compilarea fișierului hello.c în fișierul obiect hello.o.
+
+___Notă___: La regula cu target-ul hello.o se observă folosirea opțiunii -c a utilitarului gcc. Aceasta opțiune se folosește pentru a obține doar fișierul obiect din codul sursă. Se oprește procesul de compilare inainte de obținerea executabilului. La final se continua compilarea cu unirea tuturor fișierelor obiect .o într-un fișier executabil.
+
+### Folosirea variabilelor
+
+Un fișier __Makefile__ permite folosirea de variabile. Astfel, un exemplu uzual de fișier __Makefile__ este:
+<img src="./resources/images/ex-4-makefile.jpg">
+
+În exemplul de mai sus au fost definite variabilele CC și CFLAGS. Variabia CC reprezintă compilatorul folosit, iar variabila CFLAGS reprezintă opțiunile de compilare utilizate; în cazul de față sunt afișarea tuturor warning-urilor (-Wall) cu suport de depanare (-g).
+Variabilele predefinte sunt:
+- $@ se expandează la numele target-ului
+- $^ se expandează la lista de cerințe (prerequisites - lista de dependențe)
+- $< se expandează la prima cerință (la prima dependență)
